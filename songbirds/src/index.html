@@ -1,0 +1,554 @@
+<!DOCtype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <title>Songbird</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header-wrapper">
+      <div class="header__logo logo">
+        <div class="logo__content">
+          <a href="" class="link logo__link"><img src="./img/logo-img.png" alt="logo-img" class="logo-img"></a>
+          <a href="" class="link logo__link">Songbird</a>
+        </div>
+      </div>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item nav__item_active"><a href="" class="link general">главная</a></li>
+          <li class="nav__item "><a href="#" class="link quiz">викторина</a></li>
+          <li class="nav__item"><a href="#" class="link galleryNav">галерея</a></li>
+        </ul>
+      </nav>
+      <div class="header__lang">
+        <button class="button-lang lang-ru button-lang_active" value="ru">RU</button>
+        <button class="  button-lang lang-en" value="en">EN</button>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <!-- По умолчанию  <section class="about ">-->
+    <section class="about">
+      <div class="about__wrapper">
+        <div class="about__content">
+          <h1 class="about__text about-hi">
+            Привет друг! Хорошо ли ты знаешь, как поют птицы?
+          </h1>
+          <h2 class="about__text about-letsgo">
+            Давай проверим! Кликай по кнопке и наслаждайся
+            пением птиц!
+          </h2>
+          <div class="about__button-start">
+            <button class="about__button start-btn-lng">НАЧАТЬ ВИКТОРИНУ</button>
+          </div>
+          <p class="about__rules about__rules-title rules-game-lng">Правила игры:
+          <p class="about__rules rules-lng">1.В плеере №1 послушай как поет "птица-загадка" и попробуй отгадать ее - кликнув на ее название ниже.<br>2.В плеере №2 ты можешь послушать как поют птицы кликнув на ее название.<br>3.Если ты угадаешь птицу с первой попытки, то заработаешь 5 баллов, иначе каждый последующий неверный ответ минус 1 балл.</p>
+          <p class="about__rules"></p>
+          <p class="about__rules"></p>
+        </div>
+      </div>
+    </section>
+    <!-- По умолчанию  <section class="game-area game-area_invisible">-->
+    <section class="game-area game-area_invisible">
+      <section class="type">
+        <div class="type__wrapper">
+          <ul class="type__list">
+            <li class="type__item type__item_active type__item1-lng">Раминка</li>
+            <li class="type__item type__item2-lng">Воробьиные</li>
+            <li class="type__item type__item3-lng">Лесные птицы</li>
+            <li class="type__item type__item4-lng">Певчие птицы</li>
+            <li class="type__item type__item5-lng">Хищные птицы</li>
+            <li class="type__item type__item6-lng">Морские птицы</li>
+            <li class="type__item type__item_score type__item7-lng">Score:<span class="type__score">0</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="game">
+        <div class="game-wrapper">
+          <div class="game__intro">
+            <div class="card">
+              <div class="card__block">
+                <div class="card__pick">
+                  <img class="card__img" src="/src/img/bird-backgraund.jpg" alt="bird-backgraund">
+                </div>
+                <div class="card__about">
+                  <p class="card__title card__title_rundom">******</p>
+                  <p class="card__subtitle"></p>
+                  <div class="card__line"></div>
+                  <div class="card__player player">
+                    <div class="player__cercle">
+                      <div class="player__pause-btn player__btn-hidden">
+                        <svg viewBox="0 0 47.607 47.607">
+                          <path fill="#00bc8c"
+                            d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z">
+                          </path>
+                        </svg>
+                      </div>
+                      <div class="player__play-btn">
+                        <svg viewBox="-200 0 1200 1000">
+                          <path fill="#00bc8c"
+                            d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="player__condition">
+                      <div class="slidecontainer">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+                        <div class="slidecontainer__back"></div>
+                      </div>
+                      <div class="player__time">
+                        <p class="player__current-time"></p>
+                        <p class="player__duration-time"></p>
+                      </div>
+                      <div class="volumecontainer">
+                        <input type="range" min="0" max="100" value="50" class="volume" id="myRange">
+                        <div class="volumecontainer__back"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <p class="card__text"></p>
+            </div>
+          </div>
+          <div class="game__choise choise">
+            <ul class="choise__birds">
+              <button class="choise__item" value="0">
+                <span class="choise__cercle"></span>
+                <span class="choise__name-bird"></span>
+              </button>
+              <button class="choise__item" value="1">
+                <span class="choise__cercle"></span>
+                <span class="choise__name-bird"></span>
+              </button>
+              <button class="choise__item" value="2">
+                <span class="choise__cercle"></span>
+                <span class="choise__name-bird"></span>
+              </button>
+              <button class="choise__item" value="3">
+                <span class="choise__cercle"></span>
+                <span class="choise__name-bird"></span>
+              </button>
+              <button class="choise__item" value="4">
+                <span class="choise__cercle"></span>
+                <span class="choise__name-bird"></span>
+              </button>
+              <button class="choise__item" value="5">
+                <span class="choise__cercle"></span>
+                <span class="choise__name-bird"></span>
+              </button>
+            </ul>
+            <div class="choise__current-bird">
+              <p class="choise__text lisen-lng">
+                Послушайте плеер<br>Выберите птицу из списка
+              </p>
+              <div class="cards cards_hidden">
+                <div class="card">
+                  <div class="card__block">
+                    <div class="card__pick">
+                      <img class="card__img" src="/src/img/bird-backgraund.jpg" alt="bird-backgraund">
+                    </div>
+                    <div class="card__about">
+                      <p class="card__title">Name</p>
+                      <div class="card__line"></div>
+                      <p class="card__subtitle">Class</p>
+                      <div class="card__line"></div>
+                      <div class="card__player player">
+                        <div class="player__cercle">
+                          <div class="player__pause-btn player__btn-hidden">
+                            <svg viewBox="0 0 47.607 47.607">
+                              <path fill="#00bc8c"
+                                d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z">
+                              </path>
+                            </svg>
+                          </div>
+                          <div class="player__play-btn">
+                            <svg viewBox="-200 0 1200 1000">
+                              <path fill="#00bc8c"
+                                d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+                              </path>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="player__condition">
+                          <div class="slidecontainer">
+                            <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+                            <div class="slidecontainer__back"></div>
+
+                          </div>
+                          <div class="player__time">
+                            <p class="player__current-time"></p>
+                            <p class="player__duration-time"></p>
+
+                          </div>
+                          <div class="volumecontainer">
+                            <input type="range" min="0" max="100" value="50" class="volume" id="myRange">
+                            <div class="volumecontainer__back"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card__text card__text_size">Discription Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit.
+                    Consequuntur aliquid vitae praesentium deleniti repudiandae. Soluta,
+                    eaque aut. Repellendus ipsa mollitia ex architecto earum odio asperiores
+                    deleniti exercitationem. Quia, consequuntur sit?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="game__level">
+            <button class="game__button-level">Next Level</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="result result_invisible">
+      <div class="result__wrapper">
+        <p class="result__title result-congratulanion">Поздравляем!</p>
+        <p class="result__subtitle result-passed">Вы прошли викторину и набрали <span class="result__score">13</span> из 30 возможных
+          баллов!</p>
+        <button class="result__batton-again result-btn-lng">Попробовать еще раз!</button>
+      </div>
+
+    </section>
+    <!-- gallery_invisible -->
+    <section class="gallery gallery_invisible"> 
+      <div class="type__wrapper">
+        <ul class="type__list">
+          <li class="type__item type__item_active type__item-gallery type__item8-lng" >Разминка</li>
+          <li class="type__item type__item-gallery type__item9-lng">Воробьиные</li>
+          <li class="type__item type__item-gallery type__item10-lng">Лесные птицы</li>
+          <li class="type__item type__item-gallery type__item11-lng">Певчие птицы</li>
+          <li class="type__item type__item-gallery type__item12-lng">Хищные птицы</li>
+          <li class="type__item type__item-gallery type__item13-lng">Морские птицы</li>
+
+        </ul>
+      </div>
+      <div class="gallery__items">
+        <div class="card card-gallery">
+          <div class="card__block card__block-gallery">
+            <div class="card__pick card__pick-gallery">
+              <img class="card__img card__img-gallery" src="/src/img/bird-backgraund.jpg" alt="bird-backgraund">
+            </div>
+            <div class="card__about card__about-gallery">
+              <p class="card__title card__title-gallery">Name</p>
+              <div class="card__line"></div>
+              <p class="card__subtitle card__subtitle-gallery">Class</p>
+              <div class="card__line"></div>
+              <div class="card__player player">
+                <div class="player__cercle">
+                  <div class="player__pause-btn player__btn-hidden player__pause-btn-gallery">
+                    <svg viewBox="0 0 47.607 47.607">
+                      <path fill="#00bc8c"
+                        d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="player__play-btn player__play-btn-gallery">
+                    <svg viewBox="-200 0 1200 1000">
+                      <path fill="#00bc8c"
+                        d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="player__condition">
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="0" class="slider slider-gallery" id="myRange">
+                    <div class="slidecontainer__back slidecontainer__back-gallery"></div>
+                  </div>
+                  <div class="player__time">
+                    <p class="player__current-time player__current-time-gallery"></p>
+                    <p class="player__duration-time player__duration-time-gallery"></p>
+
+                  </div>
+                  <div class="volumecontainer">
+                    <input type="range" min="0" max="100" value="50" class="volume volume-gallery" id="myRange">
+                    <div class="volumecontainer__back volumecontainer__back-gallery"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="card__text card__text_size card__text-gallery">Discription Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur aliquid vitae praesentium deleniti repudiandae. Soluta,
+            eaque aut. Repellendus ipsa mollitia ex architecto earum odio asperiores
+            deleniti exercitationem. Quia, consequuntur sit?</p>
+        </div>
+        <div class="card card-gallery">
+          <div class="card__block card__block-gallery">
+            <div class="card__pick card__pick-gallery">
+              <img class="card__img card__img-gallery" src="/src/img/bird-backgraund.jpg" alt="bird-backgraund">
+            </div>
+            <div class="card__about card__about-gallery">
+              <p class="card__title card__title-gallery">Name</p>
+              <div class="card__line"></div>
+              <p class="card__subtitle card__subtitle-gallery">Class</p>
+              <div class="card__line"></div>
+              <div class="card__player player">
+                <div class="player__cercle">
+                  <div class="player__pause-btn player__btn-hidden player__pause-btn-gallery">
+                    <svg viewBox="0 0 47.607 47.607">
+                      <path fill="#00bc8c"
+                        d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="player__play-btn player__play-btn-gallery">
+                    <svg viewBox="-200 0 1200 1000">
+                      <path fill="#00bc8c"
+                        d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="player__condition">
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="0" class="slider slider-gallery" id="myRange">
+                    <div class="slidecontainer__back slidecontainer__back-gallery"></div>
+                  </div>
+                  <div class="player__time">
+                    <p class="player__current-time player__current-time-gallery"></p>
+                    <p class="player__duration-time player__duration-time-gallery"></p>
+
+                  </div>
+                  <div class="volumecontainer">
+                    <input type="range" min="0" max="100" value="50" class="volume volume-gallery" id="myRange">
+                    <div class="volumecontainer__back volumecontainer__back-gallery"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="card__text card__text_size card__text-gallery">Discription Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur aliquid vitae praesentium deleniti repudiandae. Soluta,
+            eaque aut. Repellendus ipsa mollitia ex architecto earum odio asperiores
+            deleniti exercitationem. Quia, consequuntur sit?</p>
+        </div>
+        <div class="card card-gallery">
+          <div class="card__block card__block-gallery">
+            <div class="card__pick card__pick-gallery">
+              <img class="card__img card__img-gallery" src="/src/img/bird-backgraund.jpg" alt="bird-backgraund">
+            </div>
+            <div class="card__about card__about-gallery">
+              <p class="card__title card__title-gallery">Name</p>
+              <div class="card__line"></div>
+              <p class="card__subtitle card__subtitle-gallery">Class</p>
+              <div class="card__line"></div>
+              <div class="card__player player">
+                <div class="player__cercle">
+                  <div class="player__pause-btn player__btn-hidden player__pause-btn-gallery">
+                    <svg viewBox="0 0 47.607 47.607">
+                      <path fill="#00bc8c"
+                        d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="player__play-btn player__play-btn-gallery">
+                    <svg viewBox="-200 0 1200 1000">
+                      <path fill="#00bc8c"
+                        d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="player__condition">
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="0" class="slider slider-gallery" id="myRange">
+                    <div class="slidecontainer__back slidecontainer__back-gallery"></div>
+                  </div>
+                  <div class="player__time">
+                    <p class="player__current-time player__current-time-gallery"></p>
+                    <p class="player__duration-time player__duration-time-gallery"></p>
+
+                  </div>
+                  <div class="volumecontainer">
+                    <input type="range" min="0" max="100" value="50" class="volume volume-gallery" id="myRange">
+                    <div class="volumecontainer__back volumecontainer__back-gallery"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="card__text card__text_size card__text-gallery">Discription Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur aliquid vitae praesentium deleniti repudiandae. Soluta,
+            eaque aut. Repellendus ipsa mollitia ex architecto earum odio asperiores
+            deleniti exercitationem. Quia, consequuntur sit?</p>
+        </div>
+        <div class="card card-gallery">
+          <div class="card__block card__block-gallery">
+            <div class="card__pick card__pick-gallery">
+              <img class="card__img card__img-gallery" src="/src/img/bird-backgraund.jpg" alt="bird-backgraund">
+            </div>
+            <div class="card__about card__about-gallery">
+              <p class="card__title card__title-gallery">Name</p>
+              <div class="card__line"></div>
+              <p class="card__subtitle card__subtitle-gallery">Class</p>
+              <div class="card__line"></div>
+              <div class="card__player player">
+                <div class="player__cercle">
+                  <div class="player__pause-btn player__btn-hidden player__pause-btn-gallery">
+                    <svg viewBox="0 0 47.607 47.607">
+                      <path fill="#00bc8c"
+                        d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="player__play-btn player__play-btn-gallery">
+                    <svg viewBox="-200 0 1200 1000">
+                      <path fill="#00bc8c"
+                        d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="player__condition">
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="0" class="slider slider-gallery" id="myRange">
+                    <div class="slidecontainer__back slidecontainer__back-gallery"></div>
+                  </div>
+                  <div class="player__time">
+                    <p class="player__current-time player__current-time-gallery"></p>
+                    <p class="player__duration-time player__duration-time-gallery"></p>
+
+                  </div>
+                  <div class="volumecontainer">
+                    <input type="range" min="0" max="100" value="50" class="volume volume-gallery" id="myRange">
+                    <div class="volumecontainer__back volumecontainer__back-gallery"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="card__text card__text_size card__text-gallery">Discription Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur aliquid vitae praesentium deleniti repudiandae. Soluta,
+            eaque aut. Repellendus ipsa mollitia ex architecto earum odio asperiores
+            deleniti exercitationem. Quia, consequuntur sit?</p>
+        </div>
+        <div class="card card-gallery">
+          <div class="card__block card__block-gallery">
+            <div class="card__pick card__pick-gallery">
+              <img class="card__img card__img-gallery" src="/src/img/bird-backgraund.jpg" alt="bird-backgraund">
+            </div>
+            <div class="card__about card__about-gallery">
+              <p class="card__title card__title-gallery">Name</p>
+              <div class="card__line"></div>
+              <p class="card__subtitle card__subtitle-gallery">Class</p>
+              <div class="card__line"></div>
+              <div class="card__player player">
+                <div class="player__cercle">
+                  <div class="player__pause-btn player__btn-hidden player__pause-btn-gallery">
+                    <svg viewBox="0 0 47.607 47.607">
+                      <path fill="#00bc8c"
+                        d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="player__play-btn player__play-btn-gallery">
+                    <svg viewBox="-200 0 1200 1000">
+                      <path fill="#00bc8c"
+                        d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="player__condition">
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="0" class="slider slider-gallery" id="myRange">
+                    <div class="slidecontainer__back slidecontainer__back-gallery"></div>
+                  </div>
+                  <div class="player__time">
+                    <p class="player__current-time player__current-time-gallery"></p>
+                    <p class="player__duration-time player__duration-time-gallery"></p>
+
+                  </div>
+                  <div class="volumecontainer">
+                    <input type="range" min="0" max="100" value="50" class="volume volume-gallery" id="myRange">
+                    <div class="volumecontainer__back volumecontainer__back-gallery"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="card__text card__text_size card__text-gallery">Discription Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur aliquid vitae praesentium deleniti repudiandae. Soluta,
+            eaque aut. Repellendus ipsa mollitia ex architecto earum odio asperiores
+            deleniti exercitationem. Quia, consequuntur sit?</p>
+        </div>
+        <div class="card card-gallery">
+          <div class="card__block card__block-gallery">
+            <div class="card__pick card__pick-gallery">
+              <img class="card__img card__img-gallery" src="/src/img/bird-backgraund.jpg" alt="bird-backgraund">
+            </div>
+            <div class="card__about card__about-gallery">
+              <p class="card__title card__title-gallery">Name</p>
+              <div class="card__line"></div>
+              <p class="card__subtitle card__subtitle-gallery">Class</p>
+              <div class="card__line"></div>
+              <div class="card__player player">
+                <div class="player__cercle">
+                  <div class="player__pause-btn player__btn-hidden player__pause-btn-gallery">
+                    <svg viewBox="0 0 47.607 47.607">
+                      <path fill="#00bc8c"
+                        d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="player__play-btn player__play-btn-gallery">
+                    <svg viewBox="-200 0 1200 1000">
+                      <path fill="#00bc8c"
+                        d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="player__condition">
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="0" class="slider slider-gallery" id="myRange">
+                    <div class="slidecontainer__back slidecontainer__back-gallery"></div>
+                  </div>
+                  <div class="player__time">
+                    <p class="player__current-time player__current-time-gallery"></p>
+                    <p class="player__duration-time player__duration-time-gallery"></p>
+
+                  </div>
+                  <div class="volumecontainer">
+                    <input type="range" min="0" max="100" value="50" class="volume volume-gallery" id="myRange">
+                    <div class="volumecontainer__back volumecontainer__back-gallery"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="card__text card__text_size card__text-gallery">Discription Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur aliquid vitae praesentium deleniti repudiandae. Soluta,
+            eaque aut. Repellendus ipsa mollitia ex architecto earum odio asperiores
+            deleniti exercitationem. Quia, consequuntur sit?</p>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <ul class="footer__content">
+        <li class="footer__item"><a href="https://github.com/LDS196" class="link link-footer">MY GITHUB</a></li>
+        <li class="footer__item"><a href="" class="link link-footer">2022</a></li>
+        <li class="footer__item"><a href="https://rs.school/js/" class="link link-footer"><img
+              src="/src/img/logo-rs.svg" alt="course-logo" class="footer__img-logo"></a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
