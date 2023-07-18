@@ -11,7 +11,7 @@
 
 Clone repositories:
 ```
-git clone https://github.com/LDS196/1-todolist.git
+git clone https://github.com/LDS196/songbirds.git
 ```
 
 ![image](https://github.com/LDS196/songbirds/assets/105713345/b99d0d3f-7fe8-4c52-9511-2bedacb5dea9)
