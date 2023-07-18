@@ -13,6 +13,8 @@ Clone repositories:
 ```
 git clone https://github.com/LDS196/1-todolist.git
 ```
-![image](https://github.com/LDS196/songbirds/assets/105713345/38172bee-006d-4cc9-87e8-8bcbda0c7ebd
+
+![image](https://github.com/LDS196/songbirds/assets/105713345/b99d0d3f-7fe8-4c52-9511-2bedacb5dea9)
+
 
 
