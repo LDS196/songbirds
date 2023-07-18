@@ -1,6 +1,6 @@
 :seedling: <a href="https://rolling-scopes-school.github.io/lds196-JSFE2022Q3/songbirds/" target="_blank">Song Birds</a>
 ---
-приложение позволяет пользователям создавать список задач, устанавливать для них приоритеты, редактировать и удалять их, отмечать выполненные задачи.
+это приложение-викторина, которая позволяет пользователю слушать пение птиц и отгадывать их. Так же ведется учет набранных очков пользователем во время игры.
 
 ## Технологии
 ![HTML5](https://img.shields.io/badge/-HTML5-e34f26?logo=html5&logoColor=white)
@@ -13,6 +13,6 @@ Clone repositories:
 ```
 git clone https://github.com/LDS196/1-todolist.git
 ```
+![image](https://github.com/LDS196/songbirds/assets/105713345/38172bee-006d-4cc9-87e8-8bcbda0c7ebd)
 
-[![todo.jpg](https://i.postimg.cc/wTN5JFQb/todo.jpg)](https://postimg.cc/XpVy6fhw)
 
